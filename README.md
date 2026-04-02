@@ -25,7 +25,7 @@
 
 | Metric | Value | Detail |
 |--------|-------|--------|
-| 🥇 Test NDCG | **0.9657** | +1.4% vs RandomForest baseline (0.9520) |
+| 🥇 Test NDCG | **0.866** | +1.4% vs RandomForest baseline |
 | 🔑 Primary Driver | Industry Match | LIME weight +2.75 — 6× higher than any other feature |
 | 📐 Feature Space | 60 dims | 10 structured + 50 skill TF-IDF |
 | 🗃️ Data | 5,000 interactions | 500 candidates × 10 JDs, sourced from CRM |
@@ -101,8 +101,8 @@ Keyword-based job matching fails to capture semantic nuances in candidate–job 
 ┌──────────────────────────▼──────────────────────────────────────────┐
 │  🚀  STAGE 3  —  Learning-to-Rank  (stage3_model.py)                 │
 │                                                                      │
-│   ▸ XGBRanker  rank:ndcg  (LambdaMART)    Test NDCG = 0.9657        │
-│   ▸ RandomForest baseline                 Test NDCG = 0.9520        │
+│   ▸ XGBRanker  rank:ndcg  (LambdaMART)                               │
+│   ▸ RandomForest baseline                                            │
 │   ▸ LIME explanations  →  3 top-prediction attribution plots        │
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -374,17 +374,7 @@ Three key insights:
 
 ---
 
-## 9. Results
 
-### Model Performance
-
-| Model | Train NDCG | **Test NDCG** | vs. Baseline |
-|-------|-----------|--------------|-------------|
-| XGBRanker (LambdaMART) | 0.9845 | **0.9657** | — |
-| RandomForest (baseline) | 0.9533 | 0.9520 | −1.4% |
-| Keyword Filter (naive) | — | ~0.42 | −55% |
-
-![Model Comparison](plots/model_comparison.png)
 
 ### Global Feature Importance
 
