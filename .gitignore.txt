@@ -1,0 +1,25 @@
+# Python 编译缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook 自动备份
+.ipynb_checkpoints
+
+# 虚拟环境
+venv/
+env/
+.env
+
+# 机器学习模型与大规模数据 (防止因文件过大导致推送失败)
+*.pkl
+*.pth
+*.joblib
+*.npy
+*.model
+data/
+outputs/
+
+# 操作系统临时文件
+.DS_Store
+Thumbs.db
